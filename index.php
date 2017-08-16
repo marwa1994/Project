@@ -56,6 +56,7 @@ $dbconn=mysqli_connect($host,$username,$password,$db_name);
     <body>
        
        <div class="btn btn-lg btn-info" id="save">save</div>
+        <textarea class="ckeditor" name="editor"></textarea>
 
         <div id="content-area">
             
