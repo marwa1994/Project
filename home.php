@@ -46,7 +46,6 @@ $dbconn=mysqli_connect($host,$username,$password,$db_name);
        
         
   
-        <!-- End of KEditor scripts -->
     </head>
 
     <body style="margin-top:50px;

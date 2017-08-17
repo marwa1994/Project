@@ -41,8 +41,7 @@ $dbconn=mysqli_connect($host,$username,$password,$db_name);
         <link rel="stylesheet" type="text/css" href="dist/css/keditor-1.1.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="dist/css/keditor-components-1.1.5.min.css" />
-        <!-- End of KEditor styles -->
-     
+       
          
          
           <script src="js/jquery.min.js"></script>
