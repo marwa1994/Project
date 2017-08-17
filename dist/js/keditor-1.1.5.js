@@ -829,7 +829,9 @@
 
             return body.find('#' + idSettingComponent);
         },
-
+        
+        
+   ,
         showSettingPanel: function (target) {
             flog('showSettingPanel', target);
 
@@ -1306,8 +1308,16 @@
 
                 var componentData = KEditor.components[componentType];
                 var isSettingEnabled = componentData.settingEnabled;
+                
                 var settingBtn = '';
+                
+                
+                  /*show Modal is enabled*/
+                
+            
                 if (isSettingEnabled) {
+                      flog('marwaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+                   
                     settingBtn = '<a href="javascript:void(0);" class="keditor-ui btn-component-setting">' + options.btnSettingComponentText + '</a>';
                 }
 
