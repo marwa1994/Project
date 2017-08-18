@@ -164,7 +164,7 @@
 
    
    
-   <button id="bnt" type="button" class=" btn-icon btn btn-sm btn-default" data-toggle="modal" data-target="#myModal" >save </button>
+   <button id="bnt" type="button" class=" btn-icon btn btn-sm btn-default"  data-target="#myModal" >save </button>
     
     
 
@@ -274,8 +274,111 @@
  
 </div>
 
+<!--combobox component -->
+<div  data-type="component-combobox" data-preview="snippets/default/preview/combobox.png" data-keditor-title="combobox" data-keditor-categories="combobox">
+<div>
+    <label for="myalue" style="vertical-align: middle"></label>
+    <select id="combobox" data-target="#mod" style="margin-top:100px;" >
+    
+</select>
+    
+</div>
 
 
+  
+
+            <div class="modal fade in" id="mod" role="dialog" onClick="showCombobox();">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" onClick="hideComboboxModal();"data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                            <h4 class="modal-title">Combobox</h4>
+                        </div>
+
+
+                        <form class="form-horizontal" >
+                            <div class="row" style="margin-top:30px;">
+
+
+
+                                <div class=" col-md-5 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label>Label</label><input type="text" name="text" id="labeltext"class="form-control">
+                                    </div>
+
+
+                                    <br>
+
+
+                                    <div class="form-group">
+                                        <label>Class</label><input type="text" id="classcombobox"name="class" class="form-control">
+                                    </div>
+
+                                    <br>
+                                                    <div class="field_wrapper">
+                   
+
+       
+         <label>Option</label>
+       
+        <div class="btn opt"   id="opt" title="Add option" disabled style="background-color:transparent; border:0 solid white;color:blue;" >Add Option</div>
+        <input type="text" name="field_name[]" id="inp1"/><a style="text-decoration:none;"href="#" id="r1" >x</a><input type="text" name="field_name[]" id="inp2"/><a style="text-decoration:none;" href="#"  id="r2" >x</a><input type="text" name="field_name[]" id="inp3"/><a style="text-decoration:none;" href="#" id="r3" >x</a>
+           
+
+                                                       <table id='categoriesTable'>
+                                                        </table>  
+</div>
+                                </div>
+
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label for="style">Type</label>
+
+
+                                        <select class="form-control" id="theSelect" >
+        <option id="sel2">Simple</option>
+        <option id="sel">Multiselect</option>
+        
+      </select>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" value="" disabled id="check">User can add new Option</label>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                                <div class=" col-md-2 col-md-offset-8 pull-right ">
+                                    
+                                
+                                
+                                
+                                <div class="btn btn-default" onclick="saveCombobox();return false;"id="ok" style="background-color:green;color:white;margin-bottom:20px;">OK</div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+
+
+</div>
 
 
 
