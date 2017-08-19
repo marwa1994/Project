@@ -347,7 +347,11 @@
             $("#cancel").click(function() {
   $('#myModal').css("display","none");
           });
-        
+           
+            $("#closa").click(function() {
+  $('#myModal').css("display","none");
+          });
+             
         
    
 
@@ -458,7 +462,11 @@
           
       
             
-            
+                $("#clos").click(function() {
+  $('#mod').css("display","none");
+          });
+             
+          
             
             
         $("#ok").click(function() {
