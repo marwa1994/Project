@@ -39,8 +39,7 @@ position: absolute;
     bottom: 4px
 }
 .btn-icon{
-       width: 100px;
-    height: 50px;
+      
     position: relative;
 }
 
@@ -60,6 +59,7 @@ position: absolute;
 }
 .modal {
   display:block;
+    
 }
 
 

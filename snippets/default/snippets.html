@@ -164,12 +164,12 @@
 
    
    
-   <button id="bnt" type="button" class=" btn-icon btn btn-sm btn-default"  data-target="#myModal" >save </button>
+   <button id="bnt" type="button"  class="btn-icon"   data-target="#myModal">save </button>
     
     
 
  
-  <div class="modal fade in" id="myModal" role="dialog">
+  <div class="modal" id="myModal" >
                 <div class="modal-dialog">
 
                     <!-- Modal content-->
@@ -188,10 +188,10 @@
                                         <label for="style">Style</label>
 
                                         <select  class="form-control" id="theSelect" >
-        <option value="btn-default">default</option>
-        <option value="btn-primary">primary</option>
-        <option value="btn-success">success</option>
-        <option value="btn-info">info</option>
+        <option value="btn-default">btn-default</option>
+        <option value="btn-primary">btn-primary</option>
+        <option value="btn-success">btn-success</option>
+        <option value="btn-info">btn-info</option>
         
       </select>
                                     </div>
@@ -214,9 +214,12 @@
                                         <label for="style">Size</label>
 
                                         <select  class="form-control" id="selectsizebtn" >
-        <option value="btn-lg">large</option>
-        <option value="btn-sm">small</option>
-        <option value="btn-xs">extra small</option>
+        <option value="btn-lg">btn-lg</option>
+        <option value="btn-sm">btn-sm</option>
+        <option value="btn-xs">btn-md</option> 
+        <option value="btn-xs">btn-xs</option>
+        
+      
         
         
       </select>
@@ -254,7 +257,7 @@
                                 <div class="form-group pull-right col-md-offset-5 ">
                                      <div class="btn btn-default" onclick="hide();" id="cancel" >cancel</div>
                                      
-                                   <div class="btn btn-default" onclick="savebtn();return false;"id="ok" style="background-color:green;color:white;margin-right:40px;">OK</div>
+                                   <div class="btn btn-default" id="ok" style="background-color:green;color:white;margin-right:40px;">OK</div>
                                    
                                 </div>
                             </div>
@@ -362,7 +365,7 @@
                                 
                                 
                                 
-                                <div class="btn btn-default" onclick="saveCombobox();return false;"id="ok" style="background-color:green;color:white;margin-bottom:20px;">OK</div>
+                                <div class="btn btn-default" id="ok" style="background-color:green;color:white;margin-bottom:20px;">OK</div>
                                 </div>
 
                             </div>

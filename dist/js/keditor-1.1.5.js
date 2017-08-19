@@ -831,7 +831,7 @@
         },
         
         
-   ,
+
         showSettingPanel: function (target) {
             flog('showSettingPanel', target);
 

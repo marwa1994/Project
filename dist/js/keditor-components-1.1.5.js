@@ -222,11 +222,325 @@
 
 
 
+(function ($) {
+    var KEditor = $.keditor;
+    var flog = KEditor.log;
+
+    KEditor.components['button'] = {
+       // Function will be called when initializing a component with this type
+        init: function (contentArea, container, component, keditor) {
+            flog('init "button" component', component);
+         
+     
+              var componentContent = component.children('.keditor-component-content');
+         var x=  componentContent. children("div").eq(2);
+             console.log("colllll",x);
+    x.removeClass().removeAttr('style');$('.modal-backdrop').remove(); 
+         
+            
+            
+            
+        $("#ok").click(function() {
+                
+            
+           
+         var stylebtn = document.getElementById("selectsizebtn");
+           var  optionstyle = stylebtn.options[stylebtn.selectedIndex].value;
+               
+                console.log("dd"+optionstyle);
+             //remove all classes and add selected one
+                $("#bnt").removeClass('btn-lg btn-sm btn-xs');
+                if (optionstyle) {
+                    $("#bnt").addClass(optionstyle);
+                }    
+              /* change button size
+                */  
+                
+                var stylebtn = document.getElementById("theSelect");
+             optionButton = stylebtn.options[stylebtn.selectedIndex].value;
+               
+                console.log("dd"+optionButton);
+             //remove all classes and add selected one
+                $("#bnt").removeClass('btn-default btn-primary btn-success btn-info');
+                if (optionButton) {
+                    $("#bnt").addClass(optionButton);
+                }  
+          
+                
+                /* change button text
+                */ 
+               var textbtn=  $("#textbtn") .val();
+                console.log("bbbb"+textbtn);
+                $("#bnt").text(textbtn);
+            
+            
+                /* add url 
+                */
+                var urlbtn= $("#btnurl") .val();
+               $('#bnt').click(function() {
+              window.location =urlbtn;
+               });
+            
+            /* add class 
+                */
+            
+                 var btnclass= $("#btnclass") .val();
+                    $("#bnt").addClass(btnclass);
+                
+                
+              
+                
+                
+               /*
+               Add tootip text znd position*/
+            
+            
+           var btntooltip= $("#tooltiptext") .val();
+     
+                 var btntooltiposition= $("#tooltipposition") .val();
+                  console.log(btntooltip);
+                  console.log(btntooltiposition);
+                 $('.btn-icon').tooltip({title:btntooltip , placement: btntooltiposition});
+            
+            
+            
+                  /*
+               Add icon with position*/
+           
+                var btnicon= $("#icontooltip") .val();
+                console.log(btnicon);
+                   $("#bnt").append($("<span id='marwa'class='"+btnicon+" bottom-right'></span>"));
+                
+               
+                
+                var btnticonpos= $("#position") .val();
+                console.log(btnticonpos);
+                
+                
+                
+                
+                if(btnticonpos=="right"){
+                   $("#marwa").addClass("icon-right");
+                 
+                    
+                }
+                 if(btnticonpos=="left"){
+                  $("#marwa").addClass("icon-left");
+                    
+                }
+                 if(btnticonpos=="top"){
+                      $("#marwa").addClass("icon-top");
+                    
+                }
+                 if(btnticonpos=="bottom"){
+                   $("#marwa").addClass("icon-bottom");
+                    
+                }
+     
+      $('#myModal').css("display","none");
+                
+            });
+            
+            
+            
+            
+            $("#cancel").click(function() {
+  $('#myModal').css("display","none");
+          });
+        
+        
+   
+
+            
+        }
+        
+        
+
+    };
+
+})(jQuery);
 
 
 
 
 
+(function ($) {
+    var KEditor = $.keditor;
+    var flog = KEditor.log;
+//type photo
+    KEditor.components['combobox'] = {
+       // Function will be called when initializing a component with this type
+        init: function (contentArea, container, component, keditor) {
+            flog('init "combobox" component', component);
+            
+              var componentContent = component.children('.keditor-component-content');
+         var x=  componentContent. children("div").eq(2);
+             console.log("colllll",x);
+    x.removeClass().removeAttr('style');$('.modal-backdrop').remove(); 
+          ///    var okbutton = document.getElementById("ok");
+               $("#theSelect").change(function(){          
+    var value = $("#theSelect option:selected").val();
+     var el = $("#check");
+     var sel = $("#sel").val();
+     var sel2 = $("#sel2").val();
+        var opt= $("#opt");
+        var opt2= $("#opt").val();
+         var maxField = 100; //Input fields increment limitation
+    var addButton = $('.opt'); //Add button selector
+    var wrapper = $('.field_wrapper'); //Input field wrapper
+    var fieldHTML = '<tr><td><input type="text" name="field_name[]" /><a style="text-decoration:none;"  class="remove_button" title="Remove field">x</a></td></tr>'; //New input field html 
+    var x = 1; //Initial field counter is 1
+   if(value.length == sel.length){
+       el.prop( "checked", true );
+       el.removeAttr("disabled");
+       opt.removeAttr("disabled"); 
+       
+       
+      
+         $(addButton).click(function(){ //Once add button is clicked
+             
+        if(x < maxField){ //Check maximum number of input fields
+            x++; //Increment field counter
+            $("#categoriesTable").append(fieldHTML); // Add field html
+  
+            
+            
+            
+         
+            
+            
+                      
+           /* $.each(items, function (i, item) {
+    $('#mySelect').append($('<option>', { 
+        value: item.value,
+        text : item.text 
+    }));
+});
+            */
+            
+            
+            
+        }
+    });
+    $(wrapper).on('click', '.remove_button', function(e){ //Once remove button is clicked
+        e.preventDefault();
+        $(this).parent('p').remove(); //Remove field html
+        x--; //Decrement field counter
+    });
+       
+          
+   }
+           
+        
+        else{
+           el.prop( "checked", false ); 
+           (el).prop( "disabled", true );
+            //opt.prop( "clicked", false ); 
+           //(opt).prop( "disabled", true );
+            opt.attr('disabled','disabled')
+        }
+}); 
+    $("#r1").click(function(){
+        $("#inp1").remove();
+        $("#r1").remove();
+    });
+    $("#r2").click(function(){
+        $("#inp2").remove();
+        $("#r2").remove();
+    });
+    $("#r3").click(function(){
+        $("#inp3").remove();
+        $("#r3").remove();
+    });
+
+           
+          
+          
+      
+            
+            
+            
+            
+        $("#ok").click(function() {
+                var labelcombobox=$("#labeltext") .val();
+           console.log("dd"+labelcombobox);
+           $("label[for='myalue']").html(labelcombobox);
+             var valu = $("#theSelect option:selected").val();
+           if(valu=="Multiselect"){
+               console.log("dddd");
+             $("#combobox") .attr("multiple","multiple");   
+           }
+           var valu1 = $("#inp1").val();
+           var valu2 = $("#inp2").val();
+           var valu3 = $("#inp3").val();
+           console.log("fff"+ valu1 );
+           console.log("CC"+ valu2 );
+           console.log("VV"+ valu3 );
+           if(valu1.length!==0){
+               $('#combobox').append($('<option>', {
+                 value: valu1,
+                text: valu1
+                                                   }));
+               
+           }
+            if(valu2.length!==0){
+                
+                $('#combobox').append($('<option>', {
+                 value: valu2,
+                text: valu2
+                                                   }));
+            }
+            if(valu3.length!==0){
+                
+                $('#combobox').append($('<option>', {
+                 value: valu3,
+                text: valu3
+                                                   }));
+            }
+           
+            var rows = [];
+    $("#categoriesTable tr").each(function()   {
+        if ( $('td',this).length>0) { // exclude header row
+            var $td = $('td',this);
+            rows.push({                
+                label: $td.eq(0).find('input').val(),
+                    
+            });
+        }
+     
+    });
+           
+           
+           
+           $(rows).each(function(index,element) {
+       
+       $('#combobox').append(
+           $('<option>', { 
+        value: element.label,
+        text : element.label 
+    }
+                              ));
+           
+                });
+           
+ var classcombobox=   $("#classcombobox").val();
+           $('#combobox').addClass(classcombobox);
+  $('#mod').css("display","none");
+                
+                
+            });
+         
+        
+   
+
+            
+        }
+        
+        
+
+    };
+
+})(jQuery);
 
 
 
@@ -350,7 +664,7 @@
                 }
             });
 //get align options of select 
-            var inputAlign = form.find('#photo-align');
+            var inputAlign = form.find('#photo-alignphoto-align');
             //when you select an option
             inputAlign.on('change', function () {
                 //edit the value in panel setting when cooes a specific value
